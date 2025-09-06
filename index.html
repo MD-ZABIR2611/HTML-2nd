@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zabir - Personal Website</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern CSS Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Variables for consistent theming */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #f39c12;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0 1.5rem;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            flex: 1;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        }
+        
+        .intro p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        /* Navigation Cards */
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        
+        .nav-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-icon {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            transition: var(--transition);
+        }
+        
+        .nav-card:hover .card-icon {
+            transform: scale(1.1);
+            color: var(--secondary-color);
+        }
+        
+        .card-content {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .nav-card h2 {
+            color: var(--dark-color);
+            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+        }
+        
+        .nav-card p {
+            color: #666;
+            margin-bottom: 2rem;
+            flex: 1;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: var(--transition);
+            font-weight: 600;
+            border: 2px solid var(--primary-color);
+            margin-top: auto;
+            align-self: center;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0 1.5rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            display: flex;
+            padding: 0.5rem;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .contact-info {
+            margin: 1.5rem 0;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-cards {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .intro {
+                padding: 1.5rem;
+            }
+            
+            .intro p {
+                font-size: 1.1rem;
+            }
+            
+            .nav-container {
+                gap: 0.3rem;
+            }
+            
+            .nav-link {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <p>Explore my world through these pages</p>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="index2.html" class="nav-link"><i class="fas fa-flag"></i> My Country</a>
+            <a href="index3.html" class="nav-link"><i class="fas fa-school"></i> My School</a>
+            <a href="index4.html" class="nav-link"><i class="fas fa-home"></i> My Hometown</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section class="intro">
+            <p>Hello! I'm Zabir, and this is my personal website where I share information about my country, school, and hometown. Feel free to explore and learn more about me and my background.</p>
+        </section>
+        
+        <div class="nav-cards">
+            <div class="nav-card">
+                <div class="card-icon">
+                    <i class="fas fa-flag"></i>
+                </div>
+                <div class="card-content">
+                    <h2>About My Country</h2>
+                    <p>Discover the beauty and culture of Bangladesh, my home country with rich heritage and vibrant traditions.</p>
+                    <a href="index2.html" class="btn">Explore Bangladesh <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="nav-card">
+                <div class="card-icon">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="card-content">
+                    <h2>About My School</h2>
+                    <p>Learn about International Hope School Bangladesh, where I'm pursuing my education and growth.</p>
+                    <a href="index3.html" class="btn">Visit My School <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="nav-card">
+                <div class="card-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="card-content">
+                    <h2>About My Hometown</h2>
+                    <p>Take a virtual tour of Mymensingh, my hometown with historical significance and natural beauty.</p>
+                    <a href="index4.html" class="btn">Discover Mymensingh <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="contact-info">
+                <p>Email: zabiralnaser2611@gmail.com | Phone: +880 1716317750</p>
+            </div>
+            <p>&copy; 2025 Zabir's Website. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

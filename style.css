@@ -1,0 +1,76 @@
+h1,h2,h3,h4,h5,h6,p,tr,td,li,th,nav{
+    color:black
+}
+body{
+    background-color:rgba(88, 86, 86, 0.514);
+}
+nav{
+    text-align: center;
+}
+footer{
+    text-align: center;
+
+    bottom: auto;
+    color: black;
+    border: 10PX solid;
+}
+A{
+    color: green;
+    font-size: 20px;
+}
+h1{
+    text-align: center;
+}
+.ROTATE1{
+    transform: rotateY('180');
+}
+div.ONE{
+    color: red;
+ 
+}
+.CENTER{
+    text-align: center;
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    row-gap: 10px;
+
+
+}
+.CENTER2{
+    text-align: center;
+    border-style: inset;
+    background-color:gray ;
+    color: gold;
+    border-radius: 10MM;
+    padding: 10px;
+
+}
+.STYLE{
+    border-style: inset;
+    border-color: gold;
+    background-color: WHITE;
+    text-align: center;
+    font-family: cursive;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    row-gap: 10px;
+}
+.H1DESINE{
+    font-family: cursive;
+}
+li{
+        border-style: inset;
+    border-color: gold;
+    background-color: WHITE;
+    text-align: center;
+    font-family: cursive;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    row-gap: 10px;
+}
